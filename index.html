@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>notxiileo — VR dev &amp; 3D artist</title>
+  <meta name="description" content="notxiileo — VR developer and 3D artist building Gorilla Tag fangames, maps, and mechanics in Unity, Blender, and Substance Painter. Commissions open.">
+  <meta name="theme-color" content="#050805">
+  <meta property="og:title" content="notxiileo — VR dev & 3D artist">
+  <meta property="og:description" content="Gorilla Tag fangames, maps, and mechanics built in Unity, Blender, and Substance Painter. Commissions open.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="scroll-progress" id="scrollProgress"><span></span></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <header class="site-nav">
+    <div class="wrap site-nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">&gt;_</span>
+        <span class="brand-text">notxiileo</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="work.html"><span class="idx">01</span>work</a>
+        <a href="#skills"><span class="idx">02</span>skills</a>
+        <a href="#support"><span class="idx">03</span>support</a>
+        <a href="#contact"><span class="idx">04</span>contact</a>
+      </nav>
+      <a class="btn btn-discord btn-sm magnetic" href="#contact">join_discord</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <canvas class="rain" id="rain" aria-hidden="true"></canvas>
+      <div class="orb orb-a" aria-hidden="true"></div>
+      <div class="orb orb-b" aria-hidden="true"></div>
+
+      <div class="wrap hero-inner">
+        <div class="loader" id="loader">
+          <p class="loader-status" id="loaderStatus"><span class="typed" data-text="booting notxiileo.dev"></span></p>
+          <div class="loader-bar"><span class="loader-fill" id="loaderFill"></span></div>
+          <p class="loader-pct"><span id="loaderPct">0</span>%</p>
+        </div>
+
+        <div class="hero-content" id="heroContent">
+          <div class="hero-meta hero-meta-top">
+            <span class="dot" aria-hidden="true"></span> status: accepting commissions
+          </div>
+
+          <h1 class="hero-title">
+            <span class="glitch-wrap" data-text="I build worlds">I build worlds</span>
+            <span class="glitch-wrap accent grad-text" data-text="monkeys actually climb." id="heroGlitch">monkeys actually climb.</span>
+          </h1>
+
+          <p class="lead">VR developer and 3D artist making Gorilla Tag fangames — custom maps, movement mechanics, and mods — modeled in Blender, textured in Substance Painter, and wired up to actually work in Unity.</p>
+
+          <div class="actions">
+            <a class="btn btn-primary magnetic" href="work.html">view_work <span aria-hidden="true">→</span></a>
+            <a class="btn magnetic" href="#support">commissions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>UNITY</span><span class="sep">◆</span>
+        <span>BLENDER</span><span class="sep">◆</span>
+        <span>SUBSTANCE PAINTER</span><span class="sep">◆</span>
+        <span>GORILLA TAG</span><span class="sep">◆</span>
+        <span>VR DEV</span><span class="sep">◆</span>
+        <span>C#</span><span class="sep">◆</span>
+        <span>UNITY</span><span class="sep">◆</span>
+        <span>BLENDER</span><span class="sep">◆</span>
+        <span>SUBSTANCE PAINTER</span><span class="sep">◆</span>
+        <span>GORILLA TAG</span><span class="sep">◆</span>
+        <span>VR DEV</span><span class="sep">◆</span>
+        <span>C#</span><span class="sep">◆</span>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <section class="stats-strip">
+      <div class="wrap stats-grid">
+        <div class="stat">
+          <span class="stat-num grad-text" data-count="40" data-suffix="K+">0</span>
+          <span class="stat-label">map downloads</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num grad-text" data-count="12" data-suffix="">0</span>
+          <span class="stat-label">fangames shipped</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num grad-text" data-count="3" data-suffix="+">0</span>
+          <span class="stat-label">years in VR dev</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num grad-text" data-count="0" data-suffix="ms">0</span>
+          <span class="stat-label">tolerance for jank</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="wrap section-inner">
+        <div class="section-head">
+          <div class="head-text">
+            <span class="tag">// toolkit</span>
+            <h2>Three programs, one pipeline</h2>
+            <p>Everything gets sculpted, textured, and shipped through the same loop.</p>
+          </div>
+        </div>
+
+        <div class="skill-grid">
+          <article class="skill-card">
+            <div class="skill-card-top">
+              <span class="skill-icon" aria-hidden="true">⌘</span>
+              <span class="skill-index">01</span>
+            </div>
+            <h3>Unity</h3>
+            <p>Movement mechanics, custom maps, networked interactions, and performance tuned to survive a lobby full of gorillas at once.</p>
+            <ul class="skill-tags">
+              <li>VR rigs</li><li>C#</li><li>optimization</li><li>modding SDKs</li>
+            </ul>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-card-top">
+              <span class="skill-icon" aria-hidden="true">◆</span>
+              <span class="skill-index">02</span>
+            </div>
+            <h3>Blender</h3>
+            <p>Environment blockouts, hand-modeled props, rigging, and climb-friendly geometry that reads clearly at monke speed.</p>
+            <ul class="skill-tags">
+              <li>modeling</li><li>sculpting</li><li>UV layout</li><li>retopology</li>
+            </ul>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-card-top">
+              <span class="skill-icon" aria-hidden="true">▣</span>
+              <span class="skill-index">03</span>
+            </div>
+            <h3>Substance Painter</h3>
+            <p>PBR texturing and material work that holds up at arm's length in VR, not just in a turntable render.</p>
+            <ul class="skill-tags">
+              <li>PBR texturing</li><li>bakes</li><li>smart materials</li><li>weathering</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED WORK TEASER -->
+    <section class="section section-alt" id="featured">
+      <div class="wrap section-inner">
+        <div class="section-head">
+          <div class="head-text">
+            <span class="tag">// featured</span>
+            <h2>Recent builds</h2>
+            <p>A few highlights — the full timeline has every map, mod, and render.</p>
+          </div>
+        </div>
+
+        <div class="feature-grid">
+          <a class="feature-card reveal" href="work.html#sunken-temple">
+            <div class="feature-thumb">
+              <img src="images/work-01.svg" alt="Sunken Temple — vertical climb map">
+              <span class="feature-media-count">6 shots</span>
+            </div>
+            <div class="feature-body">
+              <span class="feature-year">2026</span>
+              <h3>Sunken Temple <span class="go-arrow" aria-hidden="true">→</span></h3>
+              <p>A vertical climb map with a flooded core and collapsing stone routes.</p>
+            </div>
+          </a>
+
+          <a class="feature-card reveal" href="work.html#neon-sewers">
+            <div class="feature-thumb">
+              <img src="images/work-02.svg" alt="Neon Sewers — tag-focused map">
+              <span class="feature-media-count">3 shots</span>
+            </div>
+            <div class="feature-body">
+              <span class="feature-year">2025</span>
+              <h3>Neon Sewers <span class="go-arrow" aria-hidden="true">→</span></h3>
+              <p>Tight sightlines, glow-in-the-dark routes, a lighting pass built for headsets.</p>
+            </div>
+          </a>
+
+          <a class="feature-card reveal" href="work.html#updraft">
+            <div class="feature-thumb">
+              <img src="images/work-03.svg" alt="Updraft — movement mod">
+              <span class="feature-media-count">2 clips</span>
+            </div>
+            <div class="feature-body">
+              <span class="feature-year">2025</span>
+              <h3>Updraft — movement mod <span class="go-arrow" aria-hidden="true">→</span></h3>
+              <p>A momentum-chaining traversal mod with wind tunnels and launch pads.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="section-cta">
+          <a class="btn magnetic" href="work.html">see the full timeline <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="wrap section-inner about-grid">
+        <div class="section-head no-margin">
+          <div class="head-text">
+            <span class="tag">// about</span>
+            <h2>Hey, I'm xiileo</h2>
+          </div>
+        </div>
+
+        <div class="prose">
+          <p>I started making Gorilla Tag maps because I wanted a reason to actually finish something in Blender. A few hundred downloads later it turned into the main thing I do: block out a space, model it, texture it, then spend way too long in Unity making sure it doesn't fall apart in a sweaty 8-person lobby.</p>
+          <p>I like building for VR specifically because the feedback is immediate — if a map or mechanic doesn't feel good in-headset, you know in about four seconds. That's the whole job: make it feel good, make it run, ship it.</p>
+
+          <h3>How I work</h3>
+          <dl class="ledger">
+            <dt>Block out</dt>
+            <dd>Grayboxed in Unity first, tested for movement and scale before anything looks good.</dd>
+            <dt>Model &amp; sculpt</dt>
+            <dd>Built out in Blender once the layout survives actual playtesting.</dd>
+            <dt>Texture</dt>
+            <dd>PBR materials in Substance Painter, tuned to read clearly at VR resolution.</dd>
+            <dt>Ship</dt>
+            <dd>Optimized, tested in-headset, then pushed live and iterated on feedback.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMISSIONS / KO-FI -->
+    <section class="section section-alt" id="support">
+      <div class="wrap section-inner">
+        <div class="section-head">
+          <div class="head-text">
+            <span class="tag">// support</span>
+            <h2>Commissions &amp; shop</h2>
+            <p>Open queue right now — maps, mods, and one-off models.</p>
+          </div>
+        </div>
+
+        <div class="commission-panel reveal">
+          <div class="commission-copy">
+            <span class="commission-badge"><span class="dot" aria-hidden="true"></span> commissions open</span>
+            <h3>Get a custom map or model built</h3>
+            <p>I take on a limited number of commissions at a time — Gorilla Tag maps, movement mods, and standalone props or environments modeled and textured to the same bar as my own releases.</p>
+            <ul class="commission-list">
+              <li>Custom Gorilla Tag maps, block-out to shipped</li>
+              <li>Movement mechanics &amp; mods (Unity/C#)</li>
+              <li>Standalone Blender models + Substance texturing</li>
+            </ul>
+            <a class="btn btn-discord magnetic" href="#contact">message me on Discord <span aria-hidden="true">→</span></a>
+          </div>
+
+          <div class="kofi-card">
+            <p class="kofi-label">tips, packs &amp; extras</p>
+            <p class="kofi-shop grad-text">Ko-fi Shop</p>
+            <p class="note" style="margin-bottom:20px;">Support the work directly or grab asset packs and one-off drops.</p>
+            <a class="btn btn-kofi magnetic" href="https://ko-fi.com/notxiileo" target="_blank" rel="noopener">visit Ko-fi <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="wrap section-inner">
+        <div class="section-head">
+          <div class="head-text">
+            <span class="tag">// contact</span>
+            <h2>Let's build something</h2>
+            <p>Discord is the fastest way to reach me — email works too.</p>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-panel contact-primary reveal">
+            <p class="panel-line"><span class="dot" aria-hidden="true"></span> primary — usually replies same day</p>
+            <h3>Discord</h3>
+            <p class="note">Best for commission requests, questions about a map, or just saying hey.</p>
+            <div class="discord-tag">@ <span class="tagval">notxiileo</span></div>
+            <a class="btn btn-discord magnetic" href="https://discord.gg/your-invite" target="_blank" rel="noopener">join_discord <span aria-hidden="true">→</span></a>
+          </div>
+
+          <div class="contact-panel reveal">
+            <p class="panel-line">secondary</p>
+            <h3>Email</h3>
+            <p class="note">For anything longer-form — briefs, files, formal offers.</p>
+            <a class="mail grad-text" href="mailto:hello@notxiileo.dev">hello@notxiileo.dev</a>
+            <ul class="elsewhere">
+              <li><a href="#">YouTube</a></li>
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">Gorilla Tag Workshop</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer-inner">
+      <span>notxiileo — VR dev &amp; 3D artist</span>
+      <span class="dim">built from scratch, no engine but html/css/js</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

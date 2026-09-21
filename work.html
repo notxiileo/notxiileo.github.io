@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Work — notxiileo</title>
+  <meta name="description" content="The full build timeline — Gorilla Tag maps, mods, and renders from notxiileo, with screenshots and clips for each release.">
+  <meta name="theme-color" content="#050805">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="scroll-progress" id="scrollProgress"><span></span></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <header class="site-nav">
+    <div class="wrap site-nav-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">&gt;_</span>
+        <span class="brand-text">notxiileo</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="work.html" class="is-current"><span class="idx">01</span>work</a>
+        <a href="index.html#skills"><span class="idx">02</span>skills</a>
+        <a href="index.html#support"><span class="idx">03</span>support</a>
+        <a href="index.html#contact"><span class="idx">04</span>contact</a>
+      </nav>
+      <a class="btn btn-discord btn-sm magnetic" href="index.html#contact">join_discord</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO (compact) -->
+    <section class="hero hero-sm" id="top">
+      <canvas class="rain" id="rain" aria-hidden="true"></canvas>
+      <div class="orb orb-a" aria-hidden="true"></div>
+      <div class="orb orb-b" aria-hidden="true"></div>
+
+      <div class="wrap hero-inner">
+        <div class="hero-content is-visible">
+          <div class="hero-meta hero-meta-top">
+            <span class="dot" aria-hidden="true"></span> <a href="index.html" style="color:inherit;text-decoration:none;">notxiileo</a> / work
+          </div>
+          <h1 class="hero-title sm">
+            <span class="glitch-wrap grad-text" data-text="The full build log.">The full build log.</span>
+          </h1>
+          <p class="lead">Every Gorilla Tag map, mod, and render — screenshots, in-headset captures, and the odd clip. Click any tile to zoom in.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="section">
+      <div class="wrap section-inner">
+        <div class="timeline">
+          <div class="timeline-rail" aria-hidden="true"><span class="timeline-rail-fill" id="railFill"></span></div>
+
+          <ul class="timeline-entries" id="timelineEntries">
+
+            <!-- SUNKEN TEMPLE -->
+            <li class="timeline-entry" id="sunken-temple">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <div class="timeline-head">
+                <span class="timeline-year">2026</span>
+                <h3>Sunken Temple</h3>
+              </div>
+              <ul class="stack-tags"><li>Unity</li><li>Blender</li><li>Substance Painter</li></ul>
+              <p class="desc">A vertical climb map built around collapsing stone routes and a flooded core — designed to punish sloppy momentum. Six months of blockouts, two full re-lights, and one very patient testing squad.</p>
+              <div class="timeline-links">
+                <a href="#">Trailer</a>
+                <a href="#">Workshop page</a>
+              </div>
+              <div class="filmstrip-wrap">
+                <div class="filmstrip" data-group="sunken-temple">
+                  <button class="media-thumb" data-type="image" data-src="images/work-01.svg" data-title="Sunken Temple" data-desc="Main entrance — collapsing stone routes.">
+                    <img src="images/work-01.svg" alt="Sunken Temple — main entrance">
+                  </button>
+                  <button class="media-thumb" data-type="image" data-src="images/work-07.svg" data-title="Sunken Temple" data-desc="Secondary route, angle two.">
+                    <img src="images/work-07.svg" alt="Sunken Temple — secondary route">
+                  </button>
+                  <button class="media-thumb" data-type="image" data-src="images/work-08.svg" data-title="Sunken Temple" data-desc="The flooded core, mid-map.">
+                    <img src="images/work-08.svg" alt="Sunken Temple — flooded core">
+                  </button>
+                  <button class="media-thumb" data-type="video" data-src="videos/sunken-temple-playtest.mp4" data-poster="images/video-02-poster.svg" data-title="Sunken Temple" data-desc="Playtest clip — full climb run.">
+                    <img src="images/video-02-poster.svg" alt="Sunken Temple playtest clip">
+                    <span class="play" aria-hidden="true"></span>
+                    <span class="media-kind">video</span>
+                  </button>
+                  <button class="media-thumb" data-type="image" data-src="images/work-05.svg" data-title="Sunken Temple" data-desc="Highpoly sculpt pass on a temple prop.">
+                    <img src="images/work-05.svg" alt="Sculpt pass on a temple prop">
+                  </button>
+                  <button class="media-thumb" data-type="image" data-src="images/work-06.svg" data-title="Sunken Temple" data-desc="Substance material breakdown on the wall set.">
+                    <img src="images/work-06.svg" alt="Material pass on wall set">
+                  </button>
+                </div>
+              </div>
+              <button class="gallery-cta" data-group="sunken-temple">view full gallery — 6 items <span class="arrow" aria-hidden="true">→</span></button>
+            </li>
+
+            <!-- NEON SEWERS -->
+            <li class="timeline-entry" id="neon-sewers">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <div class="timeline-head">
+                <span class="timeline-year">2025</span>
+                <h3>Neon Sewers</h3>
+              </div>
+              <ul class="stack-tags"><li>Unity</li><li>Blender</li></ul>
+              <p class="desc">A tag-focused map with tight sightlines, glow-in-the-dark routes, and a custom lighting pass built specifically for headset performance.</p>
+              <div class="timeline-links">
+                <a href="#">Trailer</a>
+                <a href="#">Workshop page</a>
+              </div>
+              <div class="filmstrip-wrap">
+                <div class="filmstrip" data-group="neon-sewers">
+                  <button class="media-thumb" data-type="image" data-src="images/work-02.svg" data-title="Neon Sewers" data-desc="Main tag lane, glow routes lit.">
+                    <img src="images/work-02.svg" alt="Neon Sewers — main lane">
+                  </button>
+                  <button class="media-thumb" data-type="image" data-src="images/work-09.svg" data-title="Neon Sewers" data-desc="Night lighting pass.">
+                    <img src="images/work-09.svg" alt="Neon Sewers — night pass">
+                  </button>
+                  <button class="media-thumb" data-type="video" data-src="videos/updraft-clip.mp4" data-poster="images/video-01-poster.svg" data-title="Neon Sewers" data-desc="Quick lobby clip on release day.">
+                    <img src="images/video-01-poster.svg" alt="Neon Sewers release clip">
+                    <span class="play" aria-hidden="true"></span>
+                    <span class="media-kind">video</span>
+                  </button>
+                </div>
+              </div>
+              <button class="gallery-cta" data-group="neon-sewers">view full gallery — 3 items <span class="arrow" aria-hidden="true">→</span></button>
+            </li>
+
+            <!-- UPDRAFT -->
+            <li class="timeline-entry" id="updraft">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <div class="timeline-head">
+                <span class="timeline-year">2025</span>
+                <h3>Updraft — movement mod</h3>
+              </div>
+              <ul class="stack-tags"><li>Unity</li><li>C#</li></ul>
+              <p class="desc">A momentum-chaining traversal mod that adds wind tunnels and launch pads without breaking base-game tag rules.</p>
+              <div class="timeline-links">
+                <a href="#">Source</a>
+              </div>
+              <div class="filmstrip-wrap">
+                <div class="filmstrip" data-group="updraft">
+                  <button class="media-thumb" data-type="video" data-src="videos/updraft-clip.mp4" data-poster="images/video-01-poster.svg" data-title="Updraft" data-desc="Wind tunnel chain, full route.">
+                    <img src="images/video-01-poster.svg" alt="Updraft movement mod clip">
+                    <span class="play" aria-hidden="true"></span>
+                    <span class="media-kind">video</span>
+                  </button>
+                  <button class="media-thumb" data-type="image" data-src="images/work-03.svg" data-title="Updraft" data-desc="Launch pad prop, in-editor.">
+                    <img src="images/work-03.svg" alt="Updraft — launch pad prop">
+                  </button>
+                </div>
+              </div>
+              <button class="gallery-cta" data-group="updraft">view full gallery — 2 items <span class="arrow" aria-hidden="true">→</span></button>
+            </li>
+
+            <!-- SKY TEMPLE -->
+            <li class="timeline-entry" id="sky-temple">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <div class="timeline-head">
+                <span class="timeline-year">2024</span>
+                <h3>Sky Temple</h3>
+              </div>
+              <ul class="stack-tags"><li>Unity</li><li>Blender</li><li>Substance Painter</li></ul>
+              <p class="desc">My first shipped map — floating ruins connected by fall-damage-free jumps. Still gets more downloads than anything since.</p>
+              <div class="timeline-links">
+                <a href="#">Workshop page</a>
+              </div>
+              <div class="filmstrip-wrap">
+                <div class="filmstrip" data-group="sky-temple">
+                  <button class="media-thumb" data-type="image" data-src="images/work-04.svg" data-title="Sky Temple" data-desc="Floating ruins, main overlook.">
+                    <img src="images/work-04.svg" alt="Sky Temple — main overlook">
+                  </button>
+                  <button class="media-thumb" data-type="image" data-src="images/work-10.svg" data-title="Sky Temple" data-desc="Sunrise lighting pass.">
+                    <img src="images/work-10.svg" alt="Sky Temple — sunrise pass">
+                  </button>
+                </div>
+              </div>
+              <button class="gallery-cta" data-group="sky-temple">view full gallery — 2 items <span class="arrow" aria-hidden="true">→</span></button>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-alt">
+      <div class="wrap section-inner" style="text-align:center;">
+        <span class="tag">// next</span>
+        <h2 style="font-family:var(--font-display); font-size:clamp(1.4rem,3vw,1.9rem); margin:0 0 22px;">Want something built for your lobby?</h2>
+        <div class="actions" style="justify-content:center;">
+          <a class="btn btn-discord magnetic" href="index.html#contact">join_discord <span aria-hidden="true">→</span></a>
+          <a class="btn btn-kofi magnetic" href="https://ko-fi.com/notxiileo" target="_blank" rel="noopener">visit Ko-fi <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer-inner">
+      <span>notxiileo — VR dev &amp; 3D artist</span>
+      <span class="dim"><a href="index.html">back to home</a></span>
+    </div>
+  </footer>
+
+  <!-- lightbox -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous">‹</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">›</button>
+    <figure class="lightbox-figure" id="lightboxFigure">
+      <img id="lightboxImg" src="" alt="" hidden>
+      <video id="lightboxVideo" controls hidden></video>
+      <figcaption>
+        <strong id="lightboxTitle"></strong>
+        <span id="lightboxDesc"></span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
