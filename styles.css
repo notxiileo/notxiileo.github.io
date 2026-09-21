@@ -177,6 +177,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline
 .btn-sm { padding: 8px 14px; font-size: 0.8rem; }
 .btn-lg { padding: 15px 26px; font-size: 0.95rem; }
 .magnetic { will-change: transform; }
+.tilt { will-change: transform; transform-style: preserve-3d; }
 
 /* ---------------- hero ---------------- */
 .hero {
@@ -274,60 +275,93 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline
 
 .actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
-/* ---------------- big statement marquee ---------------- */
-.big-marquee {
+/* ---------------- statement marquee (single band, image chips + gradient text) ---------------- */
+.hero-marquee {
   border-bottom: 1px solid var(--line);
   border-top: 1px solid var(--line);
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 50% 120%, rgba(61,255,122,0.08), transparent 60%),
+    var(--bg);
+  overflow: hidden;
+  padding: 26px 0;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
+}
+.hero-marquee-track {
+  display: flex; align-items: center; gap: 1.2em;
+  width: max-content;
+  animation: marquee-scroll 48s linear infinite;
+  white-space: nowrap;
+}
+.hero-marquee:hover .hero-marquee-track { animation-play-state: paused; }
+.hm-item {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-family: var(--font-display); font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.01em;
+  font-size: clamp(1.25rem, 3.2vw, 2.1rem);
+  background: linear-gradient(120deg, var(--lime) 0%, var(--green-soft) 45%, var(--cyan) 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: grad-shift 7s ease-in-out infinite;
+  transition: transform 0.35s var(--ease), filter 0.35s var(--ease);
+  cursor: default;
+}
+.hm-item:hover { transform: translateY(-3px) scale(1.05); filter: drop-shadow(0 0 16px rgba(61,255,122,0.35)); }
+.hm-thumb {
+  width: 1.4em; height: 1.4em; object-fit: cover; border-radius: 8px;
+  border: 1px solid var(--line-strong);
+  flex: 0 0 auto;
+  transition: transform 0.3s var(--ease);
+}
+.hm-item:hover .hm-thumb { transform: rotate(-4deg) scale(1.1); }
+.hm-sep { color: var(--green-dim); font-size: 1.1rem; }
+@media (max-width: 640px) {
+  .hero-marquee { padding: 18px 0; }
+  .hm-thumb { width: 1.2em; height: 1.2em; }
+}
+
+/* ---------------- image reel (auto-scrolling screenshot strip) ---------------- */
+.reel-strip {
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(34,224,201,0.05), transparent 50%),
+    radial-gradient(circle at 80% 100%, rgba(160,91,255,0.05), transparent 50%),
+    var(--bg);
   overflow: hidden;
   padding: 22px 0;
   position: relative;
 }
-.big-marquee-track {
-  display: flex; align-items: center; gap: 0.9em;
+.reel-track {
+  display: flex; align-items: center; gap: 16px;
   width: max-content;
-  font-family: var(--font-display);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.01em;
-  font-size: clamp(1.6rem, 4.2vw, 2.6rem);
-  color: var(--lime);
-  animation: marquee-scroll 34s linear infinite;
-  white-space: nowrap;
+  animation: marquee-scroll 40s linear infinite;
 }
-.big-marquee-track .diamond { color: var(--green-dim); font-size: 0.55em; transform: translateY(-0.05em); }
-.big-marquee:hover .big-marquee-track { animation-play-state: paused; }
-@media (max-width: 640px) {
-  .big-marquee { padding: 16px 0; }
-}
-
-/* ---------------- marquee ---------------- */
-.marquee {
-  border-bottom: 1px solid var(--line);
-  background: var(--panel);
-  overflow: hidden;
-  padding: 16px 0;
-}
-.marquee-track {
-  display: flex; align-items: center; gap: 10px;
-  width: max-content;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 0.85rem;
-  color: var(--text-dim);
-  animation: marquee-scroll 30s linear infinite;
-}
-.marquee-track span:not(.sep) {
+.reel-strip:hover .reel-track { animation-play-state: paused; }
+.reel-item {
+  display: block; flex: 0 0 auto; width: 168px; aspect-ratio: 4/3;
+  border-radius: var(--radius-md); overflow: hidden;
   border: 1px solid var(--line); background: var(--panel);
-  border-radius: var(--radius-pill); padding: 7px 16px;
-  transition: border-color 0.2s var(--ease), color 0.2s var(--ease), transform 0.2s var(--ease);
+  transition: transform 0.35s var(--ease), border-color 0.3s var(--ease), box-shadow 0.35s var(--ease);
 }
-.marquee-track span:not(.sep):hover { border-color: var(--line-strong); color: var(--green-soft); transform: translateY(-2px); }
-.marquee-track .sep { display: none; }
-.marquee:hover .marquee-track { animation-play-state: paused; }
+.reel-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s var(--ease); }
+.reel-item:hover {
+  transform: translateY(-7px) scale(1.04);
+  border-color: var(--green-dim);
+  box-shadow: 0 16px 34px rgba(0,0,0,0.45), 0 0 26px rgba(61,255,122,0.16);
+}
+.reel-item:hover img { transform: scale(1.1); }
+@media (max-width: 640px) {
+  .reel-item { width: 128px; }
+}
 
 /* ---------------- stats ---------------- */
-.stats-strip { border-bottom: 1px solid var(--line); background: var(--bg-1); }
+.stats-strip {
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(61,255,122,0.07), transparent 55%),
+    var(--bg-1);
+}
 .stats-grid {
   display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
   padding: 40px var(--edge);
@@ -344,8 +378,18 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline
 .stat-label { font-size: 0.78rem; color: var(--text-dim); }
 
 /* ---------------- sections ---------------- */
-.section { border-bottom: 1px solid var(--line); }
-.section-alt { background: var(--bg-1); }
+.section {
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 8% 6%, rgba(61,255,122,0.045), transparent 40%),
+    radial-gradient(circle at 92% 94%, rgba(160,91,255,0.045), transparent 40%);
+}
+.section-alt {
+  background:
+    radial-gradient(circle at 88% 8%, rgba(34,224,201,0.055), transparent 42%),
+    radial-gradient(circle at 8% 92%, rgba(255,93,160,0.045), transparent 42%),
+    var(--bg-1);
+}
 .section-inner { padding-top: 76px; padding-bottom: 76px; }
 .section-head { max-width: 60ch; margin-bottom: 44px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; }
 .section-head .head-text { max-width: 60ch; }

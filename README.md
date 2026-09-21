@@ -62,7 +62,10 @@ The color, gradient, and type tokens live at the top of `styles.css` (`--green`,
 - A short boot loader plays once on the homepage — a typed status line and a gradient progress bar — then fades into the hero content. It doesn't block scrolling or the nav.
 - The falling characters behind each hero are a `<canvas>` matrix-rain loop, contained to the hero only.
 - Two blurred gradient orbs drift slowly behind each hero.
-- A bold uppercase lime-green statement banner (`.big-marquee`, homepage only) scrolls right under the hero — edit the phrases inside `.big-marquee-track` in `index.html` (there are two identical sets of `<span>`s back to back for the seamless loop; edit both). It uses a lime accent (`--lime` / `--lime-dim` in `styles.css`) that's a yellow-green variant of the site's existing green palette, and pauses on hover like the smaller tag marquee below it.
+- One scrolling statement banner (`.hero-marquee`, homepage only) sits right under the hero — bold gradient text (lime → green → cyan) with small screenshot chips mixed in between phrases, edges fading out, pauses on hover. Edit the phrases/images inside `.hero-marquee-track` in `index.html` (two identical sets back to back for the seamless loop — edit both).
+- Right below that, an auto-scrolling image reel (`.reel-strip`) scrolls a strip of screenshots — each tile links into that project's spot on the timeline. Add/remove `<a class="reel-item">` tiles to change what shows.
+- Cards across the homepage (skill cards, featured-work cards) tilt slightly toward the cursor on hover for a bit of extra interactivity — this is the `.tilt` class + the tilt handler in `script.js`, and it's skipped automatically for touch devices and reduced-motion.
+- Soft color washes (green/violet/cyan/pink) sit behind each section for more visual depth — tuned in `styles.css` under `.section`, `.section-alt`, and `.stats-strip`.
 - The homepage headline's second line uses an animated gradient and glitches on hover — plus a brief automatic glitch pulse every few seconds so it stays alive even if no one hovers it.
 - The tag strip scrolls infinitely and pauses on hover.
 - On `work.html`, a vertical rail next to the timeline fills with a gradient as you scroll, and each project's dot lights up green once it's in view.

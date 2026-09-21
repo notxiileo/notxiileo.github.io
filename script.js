@@ -264,6 +264,24 @@ var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
   });
 })();
 
+/* ---------------- tilt cards (skill/feature/commission — subtle 3D follow) ---------------- */
+(function () {
+  var hasFinePointer = window.matchMedia("(pointer: fine)").matches;
+  if (!hasFinePointer || reduceMotion) return;
+  var els = document.querySelectorAll(".tilt");
+  els.forEach(function (el) {
+    el.addEventListener("mousemove", function (e) {
+      var r = el.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5;
+      var y = (e.clientY - r.top) / r.height - 0.5;
+      el.style.transform = "perspective(800px) rotateX(" + (-y * 7) + "deg) rotateY(" + (x * 7) + "deg) translateY(-6px)";
+    });
+    el.addEventListener("mouseleave", function () {
+      el.style.transform = "";
+    });
+  });
+})();
+
 /* ---------------- media lightbox (gallery-item + media-thumb, grouped, prev/next, video) ---------------- */
 (function () {
   var lightbox = document.getElementById("lightbox");
