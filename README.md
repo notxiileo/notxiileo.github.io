@@ -62,6 +62,7 @@ The color, gradient, and type tokens live at the top of `styles.css` (`--green`,
 - A short boot loader plays once on the homepage — a typed status line and a gradient progress bar — then fades into the hero content. It doesn't block scrolling or the nav.
 - The falling characters behind each hero are a `<canvas>` matrix-rain loop, contained to the hero only.
 - Two blurred gradient orbs drift slowly behind each hero.
+- A bold uppercase lime-green statement banner (`.big-marquee`, homepage only) scrolls right under the hero — edit the phrases inside `.big-marquee-track` in `index.html` (there are two identical sets of `<span>`s back to back for the seamless loop; edit both). It uses a lime accent (`--lime` / `--lime-dim` in `styles.css`) that's a yellow-green variant of the site's existing green palette, and pauses on hover like the smaller tag marquee below it.
 - The homepage headline's second line uses an animated gradient and glitches on hover — plus a brief automatic glitch pulse every few seconds so it stays alive even if no one hovers it.
 - The tag strip scrolls infinitely and pauses on hover.
 - On `work.html`, a vertical rail next to the timeline fills with a gradient as you scroll, and each project's dot lights up green once it's in view.

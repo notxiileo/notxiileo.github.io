@@ -22,6 +22,8 @@
   --violet: #a05bff;
   --pink: #ff5da0;
   --gold: #ffb84d;
+  --lime: #c6ff4d;
+  --lime-dim: #7ea62c;
   --line: rgba(61, 255, 122, 0.16);
   --line-strong: rgba(61, 255, 122, 0.34);
   --text: #d9f5e2;
@@ -271,6 +273,33 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline
 .lead { max-width: 56ch; margin: 0 0 36px; font-size: 1.02rem; line-height: 1.75; color: var(--text-dim); }
 
 .actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* ---------------- big statement marquee ---------------- */
+.big-marquee {
+  border-bottom: 1px solid var(--line);
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+  overflow: hidden;
+  padding: 22px 0;
+  position: relative;
+}
+.big-marquee-track {
+  display: flex; align-items: center; gap: 0.9em;
+  width: max-content;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  font-size: clamp(1.6rem, 4.2vw, 2.6rem);
+  color: var(--lime);
+  animation: marquee-scroll 34s linear infinite;
+  white-space: nowrap;
+}
+.big-marquee-track .diamond { color: var(--green-dim); font-size: 0.55em; transform: translateY(-0.05em); }
+.big-marquee:hover .big-marquee-track { animation-play-state: paused; }
+@media (max-width: 640px) {
+  .big-marquee { padding: 16px 0; }
+}
 
 /* ---------------- marquee ---------------- */
 .marquee {
